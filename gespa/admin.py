@@ -49,7 +49,7 @@ class PrestazioneAdmin(admin.ModelAdmin):
     # date_hierarchy = 'data'
     list_filter = ('data', 'prestazione')
     readonly_fields = ('saldo',)
-    search_fields = ['cliente__cf']
+    search_fields = ['cliente__cf', 'cliente__nome', 'cliente__cognome']
     save_on_top = True
 
 ### funzione per il saldo "on fly" sulla view (funzionanate) #####
