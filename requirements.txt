@@ -1,0 +1,5 @@
+Django==1.8
+django-italian-utils==0.3
+django-jet==1.0.7
+pytz==2018.3
+xlwt==1.3.0
