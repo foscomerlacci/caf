@@ -19,22 +19,31 @@ class Cliente(models.Model):
         ('pen', 'pensionato'),
         )
     scelte_convenzionato = (
+        ('no', 'no'),
         ('ENI', 'ENI'),
         ('ERG','ERG'),
         ('APV','APVE'),
         ('alt','altro'),
         )
+    scelte_prima_casa = (
+        ('no', 'No'),
+        ('si', 'Si'),
+    )
+    scelte_seconda_casa = (
+        ('no', 'No'),
+        ('si', 'Si'),
+    )
     nome = models.CharField(max_length=50)
     cognome = models.CharField(max_length=50)
     cf = models.CharField(verbose_name='Codice fiscale', max_length=16, validators=[validate_codice_fiscale])
     tel_fisso = models.CharField(max_length=12, null=True, blank=True)
     tel_cellulare = models.CharField(max_length=12, null=True, blank=True)
-    congiunto = models.CharField(max_length=100, null=True, blank=True)
     prima_casa = models.NullBooleanField(default=False)
     seconda_casa = models.NullBooleanField(default=False)
-    stato = models.CharField(max_length=3, choices=scelte_stato)
-    reddito = models.CharField(max_length=3, choices=scelte_reddito)
-    convenzionato = models.CharField(max_length=3, choices=scelte_convenzionato, null=True)
+    stato = models.CharField(max_length=3, choices=scelte_stato, default=scelte_stato[0])
+    congiunto = models.CharField(max_length=100, null=True, blank=True)
+    reddito = models.CharField(max_length=3, choices=scelte_reddito, default=scelte_reddito[0])
+    convenzionato = models.CharField(max_length=3, choices=scelte_convenzionato, null=True, default=scelte_convenzionato[0] )
 
     def __str__(self):
         # return self.cf

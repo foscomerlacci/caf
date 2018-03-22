@@ -12,7 +12,7 @@ ChangeFormTabsUpdater.prototype = {
         $modules.each(function(i) {
             var $module = $(this);
             var $header = $module.find('> h2').first();
-            var title = $header.length != 0 ? $header.html() : t('General');
+            var title = $header.length != 0 ? $header.html() : t('Generale');
             var className = 'module_' + i;
 
             $module.addClass(className);
@@ -27,7 +27,7 @@ ChangeFormTabsUpdater.prototype = {
         $inlines.each(function(i) {
             var $inline = $(this);
             var $header = $inline.find('> h2, > fieldset.module > h2, .tabular.inline-related > .module > h2').first();
-            var title = $header.length != 0 ? $header.html() : t('General');
+            var title = $header.length != 0 ? $header.html() : t('Generale');
             var className = 'inline_' + i;
 
             $inline.addClass(className);

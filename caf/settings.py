@@ -35,6 +35,8 @@ INSTALLED_APPS = (
     # 'suit',
     # 'bootstrap_admin'
     # 'grappelli',
+    'jquery',
+    'crispy_forms',
     'jet.dashboard',
     'jet',
     'django.contrib.admin',
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'caf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

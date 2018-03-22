@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.conf.urls import url
+from .forms import ClienteForm
 from .models import Pagamento, Cliente, Prestazione
 from .toolbox import export_xls
+
+
 
 
 # Register your models here.
@@ -23,17 +26,19 @@ class PrestazioneInLine(admin.TabularInline):
 
 class ClienteAdmin(admin.ModelAdmin):
 
-## funzione per cancellare dalla lista l'action "delete_selected"
+## funzione per cancellare dalla lista l'action "delete_selected" ##########
 
     def get_actions(self, request):
         actions = super(ClienteAdmin, self).get_actions(request)
         if 'delete_selected' in actions:
             del actions['delete_selected']
         return actions
-
+##############################################################################
     list_display = ['cf','nome','cognome','convenzionato']
     search_fields = ['cf', 'cognome']
     actions = [export_xls]
+    form = ClienteForm
+
 
 
 class PagamentoAdmin(admin.ModelAdmin):
