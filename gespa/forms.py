@@ -21,15 +21,18 @@ class ClienteForm(forms.ModelForm):
 
         widgets = {
             'prima_casa': forms.Select(choices=Cliente.scelte_prima_casa),
-            'seconda_casa': forms.Select(choices=Cliente.scelte_seconda_casa),
+            # 'seconda_casa': forms.Select(choices=Cliente.scelte_seconda_casa),
             'stato': forms.Select(choices=Cliente.scelte_stato),
+            # 'prima_casa': forms.BooleanField(initial=True),
+            # 'seconda_casa': forms.BooleanField(initial=True),
         }
 
 ## importo i javascript per jquery in modo da rendere dinamici i campi 'seconda_casa' e 'congiunto'
 
     class Media:
         js = (
-            '/static/seconda_casa.js',
             '/static/congiunto.js',
+            '/static/seconda_casa.js',
+
         )
 

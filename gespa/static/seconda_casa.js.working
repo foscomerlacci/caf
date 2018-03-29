@@ -1,17 +1,17 @@
 (function($) {
     $(function() {
         var selectField = $('#id_prima_casa'),
-            // verified = $('.form-row.field-seconda_casa'),
-            verified = $('div.form-row:nth-child(8)'),
-            sc_da_resettare = $('#id_seconda_casa');
+            verified = $('.form-row.field-seconda_casa'),
+
+            sc_da_resettare = $('select#id_seconda_casa span');
 
         function toggleVerified(value) {
-             if (value === 'False') {
+             if (value === 'no') {
 
                  verified.hide();
-                 sc_da_resettare.prop( "checked", false );
 
              } else {
+                 // verified.reload();
 
                  verified.show();
 

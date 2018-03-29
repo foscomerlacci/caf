@@ -34,7 +34,7 @@ class ClienteAdmin(admin.ModelAdmin):
             del actions['delete_selected']
         return actions
 ##############################################################################
-    list_display = ['cf','nome','cognome','convenzionato']
+    list_display = ['cf','nome','cognome','convenzionato', 'prima_casa', 'seconda_casa']
     search_fields = ['cf', 'cognome']
     actions = [export_xls]
     form = ClienteForm

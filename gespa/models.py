@@ -26,8 +26,8 @@ class Cliente(models.Model):
         ('alt','altro'),
         )
     scelte_prima_casa = (
-        ('no', 'No'),
-        ('si', 'Si'),
+        ('False', 'No'),
+        ('True', 'Si'),
     )
     scelte_seconda_casa = (
         ('no', 'No'),
@@ -39,7 +39,7 @@ class Cliente(models.Model):
     tel_fisso = models.CharField(max_length=12, null=True, blank=True)
     tel_cellulare = models.CharField(max_length=12, null=True, blank=True)
     prima_casa = models.NullBooleanField(default=False)
-    seconda_casa = models.NullBooleanField(default=False)
+    seconda_casa = models.BooleanField(default=False)
     stato = models.CharField(max_length=3, choices=scelte_stato, default=scelte_stato[0])
     congiunto = models.CharField(max_length=100, null=True, blank=True)
     reddito = models.CharField(max_length=3, choices=scelte_reddito, default=scelte_reddito[0])
