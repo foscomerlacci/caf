@@ -2,6 +2,13 @@ from django import forms
 from .models import Cliente
 
 class ClienteForm(forms.ModelForm):
+
+    def clean_nome(self):
+        return self.cleaned_data['nome'].capitalize()
+
+    def clean_cognome(self):
+        return self.cleaned_data['cognome'].capitalize()
+
     class Meta:
         model = Cliente
         fields = (
