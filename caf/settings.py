@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'italian_utils',
     'gespa',
+    'dbbackup',  # django-dbbackup
 
 )
 
@@ -62,6 +63,12 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'caf.urls'
+
+# DBBACKUP_STORAGE = 'dbbackup.storage.filesystem_storage'
+# DBBACKUP_STORAGE_OPTIONS = {'location': '/var/backups'}
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': '/home/utente/PycharmProjects/caf/backups'}
 
 TEMPLATES = [
     {
